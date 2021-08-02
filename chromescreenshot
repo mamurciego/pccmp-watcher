@@ -1,0 +1,5 @@
+#!/bin/bash
+chrome="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+screenshot=${2:-screenshot.png}
+url=${1:-https://www.pccomponentes.com/sony-playstation-5-standard-ratchet-clank-una-dimension-aparte-ps5}
+"$chrome" --headless --disable-gpu --hide-scrollbars --disable-crash-reporter --user-agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36" --window-size=1920,1080 --screenshot="$screenshot" --virtual-time-budget=2000 --timeout=60000 --block-new-web-contents "$url"
