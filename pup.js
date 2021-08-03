@@ -25,10 +25,10 @@ const randomUseragent = require('random-useragent');
     console.log("Getting url: " + theurl);
     await page.goto(theurl, { waitUntil: 'networkidle2' });
     // await page.pdf({ path: 'page.pdf', format: 'A4' });
+    await page.screenshot({ path: "screenshot.png", fullPage: true });
     const userAgent = await page.evaluate(() => navigator.userAgent);
     console.log(userAgent)
-    const available = await page.evaluate(() => $(".js-article-buy").first().text().indexOf("Comprar") >= 0)
-    console.log("available: " + available)
-    await page.screenshot({ path: "screenshot.png", fullPage: true })
+    const available = await page.evaluate(() => $(".js-article-buy").first().text().indexOf("Comprar") >= 0);
+    console.log("available: " + available);
     await browser.close();
 })();
