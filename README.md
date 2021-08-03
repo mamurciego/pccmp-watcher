@@ -7,6 +7,7 @@
 ```bash
 npm i --save puppeteer
 npm i --save random-useragent
+npm i --save aws-sdk
 ```
 
 
